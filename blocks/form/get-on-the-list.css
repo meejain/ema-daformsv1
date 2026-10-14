@@ -1,0 +1,262 @@
+/*
+ * Copyright 2026 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+/* "GET ON THE LIST." subscription form (ustacoaching.com home page, above the footer).
+ * The source uses the licensed Graphik web fonts; they are named here with the source's own
+ * fallback (Tahoma). Add the licensed font files to the project to render Graphik. */
+
+/* Dark section, no card around the form (the source form sits directly on a black band). */
+main .form-container:has(.get-on-the-list-form) {
+  background-color: #000;
+  padding: 32px 0;
+}
+
+main .form-container:has(.get-on-the-list-form) h2 {
+  color: #fff;
+}
+
+main .form-container:has(.get-on-the-list-form) .form-wrapper,
+main .form:has(.get-on-the-list-form) {
+  background-color: transparent;
+  max-width: none;
+  padding: 0;
+}
+
+main .form form:has(.get-on-the-list-form) {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: calc(100vw - 80px);
+  max-width: 1312px;
+  margin: 0 auto;
+  font-family: "Graphik Regular", Tahoma, sans-serif;
+}
+
+/* Fields sit 8px inside the form; the button is flush with the form edge. */
+main .form form .get-on-the-list-form.field-wrapper:not(.submit-wrapper, fieldset) {
+  margin: 0 8px;
+}
+
+/* Text inputs */
+main .form form .get-on-the-list-email > label,
+main .form form .get-on-the-list-zipcode > label {
+  display: block;
+  width: 100%;
+  padding: 0;
+  font-family: "Graphik Semibold", Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+main .form form .get-on-the-list-email[data-required="true"] > label::after,
+main .form form .get-on-the-list-zipcode[data-required="true"] > label::after {
+  content: none;
+}
+
+main .form form .get-on-the-list-email[data-required="true"] > label::before,
+main .form form .get-on-the-list-zipcode[data-required="true"] > label::before {
+  content: "*";
+}
+
+main .form form .get-on-the-list-email input,
+main .form form .get-on-the-list-zipcode input {
+  height: 58px;
+  margin: 8px 0 0;
+  padding: 16px 20px;
+  border: 1px solid rgb(135 135 135);
+  border-radius: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: "Graphik Regular", Tahoma, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+main .form form .get-on-the-list-email input:hover,
+main .form form .get-on-the-list-zipcode input:hover {
+  border-color: rgb(135 135 135);
+}
+
+main .form form .get-on-the-list-email input:focus,
+main .form form .get-on-the-list-zipcode input:focus {
+  outline-color: rgb(3 115 243);
+}
+
+/* Invalid: red text and border, message directly under the input. */
+main .form form .get-on-the-list-email.field-invalid input,
+main .form form .get-on-the-list-zipcode.field-invalid input {
+  border-color: rgb(255 46 46);
+  color: rgb(255 46 46);
+}
+
+main .form form .get-on-the-list-email.field-invalid .field-description,
+main .form form .get-on-the-list-zipcode.field-invalid .field-description {
+  margin: 0;
+  padding: 4px 0 0;
+  font-family: "Graphik Regular", Tahoma, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  color: rgb(255 46 46);
+}
+
+/* Checkbox group: title, then options stacked (mobile) or inline and wrapping (600px+). */
+main .form form fieldset.get-on-the-list-what-type-of-coach-are-you {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: auto;
+  margin: 32px 8px;
+  padding: 0;
+}
+
+main .form form fieldset.get-on-the-list-what-type-of-coach-are-you > legend {
+  float: left;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-family: "Graphik Semibold", Tahoma, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  color: #fff;
+}
+
+main .form form fieldset.get-on-the-list-what-type-of-coach-are-you > .checkbox-wrapper {
+  flex-wrap: nowrap;
+  margin: 0;
+  gap: 8px;
+}
+
+main .form form fieldset.get-on-the-list-what-type-of-coach-are-you input[type="checkbox"] {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #000;
+  font-family: Arial, sans-serif;
+  font-size: 13.3333px;
+  line-height: normal;
+}
+
+main .form form fieldset.get-on-the-list-what-type-of-coach-are-you input[type="checkbox"]:checked {
+  border-color: rgb(207 255 5);
+  background: rgb(207 255 5) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12l4 4 8-8' fill='none' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E") center / 100% no-repeat;
+}
+
+main .form form fieldset.get-on-the-list-what-type-of-coach-are-you > .checkbox-wrapper > label {
+  flex-basis: auto;
+  padding: 0;
+  font-family: "Graphik Regular", Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #fff;
+}
+
+/* Terms text */
+main .form form .get-on-the-list-text-1 p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 19.2px;
+  color: #fff;
+}
+
+main .form form .get-on-the-list-text-1 a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Subscribe: lime when the form is valid; grey and unclickable until then, as on the source
+ * (which disables the button until email and zip are valid). */
+main .form form .field-wrapper.get-on-the-list-submit {
+  margin: 32px 0 0;
+}
+
+main .form form .get-on-the-list-submit button,
+main .form form .get-on-the-list-submit button:hover {
+  width: 100%;
+  margin: 0;
+  padding: 16px 24px;
+  border: 2px solid #000;
+  border-radius: 12px;
+  background-color: rgb(207 255 5);
+  color: #000;
+  font-family: "Graphik Semibold", Tahoma, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.48px;
+}
+
+main .form form:invalid .get-on-the-list-submit button {
+  background-color: rgb(189 189 185);
+  color: rgb(76 76 76);
+  cursor: default;
+  pointer-events: none;
+}
+
+@media (width >= 600px) {
+  main .form form:has(.get-on-the-list-form) {
+    width: calc(100vw - 128px);
+  }
+
+  main .form form fieldset.get-on-the-list-what-type-of-coach-are-you {
+    flex-flow: row wrap;
+  }
+
+  main .form form fieldset.get-on-the-list-what-type-of-coach-are-you > legend {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  main .form form fieldset.get-on-the-list-what-type-of-coach-are-you > .checkbox-wrapper > label {
+    font-size: 18px;
+  }
+
+  main .form form .get-on-the-list-text-1 p {
+    font-size: 18px;
+    line-height: 21.6px;
+  }
+
+  main .form form .field-wrapper.get-on-the-list-submit {
+    margin-top: 10px;
+  }
+
+  main .form form .get-on-the-list-submit button,
+  main .form form .get-on-the-list-submit button:hover {
+    width: auto;
+    font-size: 18px;
+    letter-spacing: -0.54px;
+  }
+}
+
+@media (width >= 900px) {
+  main .form form:has(.get-on-the-list-form) {
+    width: calc(100vw - 160px);
+  }
+}
+
+@media (width >= 1200px) {
+  main .form form:has(.get-on-the-list-form) {
+    width: calc(100vw - 224px);
+  }
+}
